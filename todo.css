@@ -1,0 +1,13 @@
+h1 {
+	font-family: Georgia, Time, serif;
+	font-size: 250%;
+	color: blue;
+}
+
+th, td {
+	text-align: left;
+	background-color: #e0e9f0;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+}
