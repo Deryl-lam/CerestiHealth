@@ -22,28 +22,28 @@
         <div class="form-group" ng-class="{ 'has-error' : todoForm.taskName.$invalid && !todoForm.taskName.$pristine }">
             <label>Task Name</label>
             <input type="text" name="taskName" class="form-control" ng-model="newtask.TaskName" required>
-            <span ng-show="todoForm.taskName.$invalid" class="help-block">Task name is required.</span>
+            <span ng-show="todoForm.taskName.$invalid" class="help-block">Task name is required!</span>
         </div>
 
         <!-- Task Description -->
         <div class="form-group" ng-class="{ 'has-error' : todoForm.taskDescription.$invalid && !todoForm.taskDescription.$pristine }">
             <label>Task Description</label>
             <input type="text" name="taskDescription" class="form-control" ng-model="newtask.Description" required>
-            <span ng-show="todoForm.taskDescription.$invalid" class="help-block">Task Description is required.</span>
+            <span ng-show="todoForm.taskDescription.$invalid" class="help-block">Task Description is required!</span>
         </div>
 
         <!-- Due Date -->
         <div class="form-group" ng-class="{ 'has-error' : todoForm.dueDate.$invalid && !todoForm.dueDate.$pristine }">
             <label>Due Date:</label>
             <input type="text" name="dueDate" class="form-control" ng-model="newtask.DueDate" ng-pattern="datePattern" required />
-            <span ng-show="todoForm.dueDate.$error.pattern" class="help-block">Date format should be YYYY-MM-DD or YYYY/MM/DD.</span>
+            <span ng-show="todoForm.dueDate.$error.pattern" class="help-block">Date format should be YYYY-MM-DD or YYYY/MM/DD!</span>
         </div>
 
 	  <span class="title">Task completed?</span>
 	    <input type="checkbox" ng-model="newtask.Completed" ng-true-value="true" ng-false-value="false" />
         <br/>
         <br/>
-        {{errorMsg}}
+        <span class="help-block"> {{errorMsg}} </span>
 	</fieldset>	
 
         <input type="hidden" ng-model="newtask.id" />

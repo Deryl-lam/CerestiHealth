@@ -21,7 +21,8 @@ th, td {
 }
 
 span.help-block {
-	color: red;
+	color: yellow;
+	font-size: 100%;
 }
 
 fieldset {
@@ -36,4 +37,8 @@ html {
 	color: black;
 	background-image: url(animal.jpg);
 	background-size: 100%;
+}
+
+legend {
+	font-size: 200%;
 }

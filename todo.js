@@ -42,7 +42,7 @@ function TaskController($scope) {
         }
         else
         {
-            $scope.errorMsg  = "Invalid Input.  Task is not updated.";        
+            $scope.errorMsg  = "Invalid Input!  Task is not updated!";        
         }
         $scope.newtask = {};
     }
