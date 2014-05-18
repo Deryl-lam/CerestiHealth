@@ -2,27 +2,48 @@ var uid = 1;
 
 
 function TaskController($scope) {
-    
+
+    // Date pattern is YYYY-MM-DD or YYYY/MM/DD
+    $scope.datePattern=/^(199\d|[2-9]\d{3})[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/i;
+    $scope.errorMsg="";
+
+    //var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;  
+
     $scope.tasks = [
-        {id:0, 'Description': 'Task 1', 'DueDate':'2014-04-05', 'Completed': 'true'},
-        {id:1, 'Description': 'Task 2', 'DueDate':'2014-07-08', 'Completed': 'false'}
+        {id:0, 'TaskName': 'Clean house', 'Description': 'Need to clean toilets', 'DueDate':'2014/03/15', 'Completed': 'false'},
     ];
     
-    $scope.newTask = function() {
+    $scope.newTask = function(isValid) {
      
-        $scope.newtask.id = uid++;
-        $scope.tasks.push($scope.newtask);
-        $scope.newtask = {};
+        if (isValid)
+        {
+            $scope.newtask.id = uid++;
+            $scope.tasks.push($scope.newtask);
+            $scope.newtask = {}; 
+            $scope.errorMsg = "";           
+        }
+        else
+        {
+            $scope.errorMsg  = "Invalid Input.  Task is not created.";            
+        }
     }
 
 	
-    $scope.saveTask = function() {
-            
-		 for(i in $scope.tasks) {
-				if($scope.tasks[i].id == $scope.newtask.id) {
-					$scope.tasks[i] = $scope.newtask;
-				}
-		 }                
+    $scope.saveTask = function(isValid) {
+        
+        if (isValid)
+        {
+            for(i in $scope.tasks) {
+                if($scope.tasks[i].id == $scope.newtask.id) {
+                    $scope.tasks[i] = $scope.newtask;
+                }
+            }
+           $scope.errorMsg = "";                                              
+        }
+        else
+        {
+            $scope.errorMsg  = "Invalid Input.  Task is not updated.";        
+        }
         $scope.newtask = {};
     }
 
@@ -36,6 +57,8 @@ function TaskController($scope) {
             }
         }
         
+		// reset the error message
+		$scope.errorMsg = ""; 
     }
     
      $scope.deleteTasks = function() {
@@ -47,6 +70,9 @@ function TaskController($scope) {
 		// remove the last one
 		$scope.tasks.splice(0,1);
 		$scope.newtask = {};
+		
+		// remove
+		$scope.errorMsg = ""; 
         
     }
        
@@ -56,5 +82,7 @@ function TaskController($scope) {
                 $scope.newtask = angular.copy($scope.tasks[i]);
             }
         }
+		
+		$scope.errorMsg = ""; 
     }
 }

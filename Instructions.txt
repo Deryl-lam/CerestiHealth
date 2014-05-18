@@ -6,12 +6,12 @@ Description:
 This is a simple to do list which allows the user to delete a task, 
 delete all tasks, insert a task, view a task or all the tasks, and edit a task. Tasks
  have a due date, a title, and an option that will allow the user to change the status of their task
-to finished or still working on it.
+to finished or still working.
 
 Instructions:
 
 1. Transfer files to xampp folder. Go to your xampp folder (usually in C:\) and open it. Next, open your htdocs folder and 
-insert the html, js, and css files so xampp can recognize them for the local server.
+insert all provided files so xampp can recognize them for the local server.
 
 2. Go back to your xampp folder and double click the xampp_start batch file. This will run the local server.
 
@@ -26,7 +26,7 @@ check the task completed box to show that you've finished it or leave it blank i
 
 7. To delete a task, simply click the delete button on the task you want.
 
-8. To edit a task, simply click the edit button. Your task should be displayed in the Task Description and Due Date bars. 
+8. To edit a task and view a single task, simply click the edit button. Your task should be displayed in the Task Description and Due Date bars. 
 You can change the due date our your task description and then click update to commit the changes.
 
 9. To delete all tasks, click delete all.
